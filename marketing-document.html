@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift to Gift - Marketing Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        url('assets/mission-raceway.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Racing Sans One', cursive;
+            background: linear-gradient(90deg, #ff4500, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        .section {
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .color-sample {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .gradient-sample {
+            background: linear-gradient(90deg, #ff4500, #ff8c00);
+        }
+
+        .orange-sample {
+            background: #FF8C00;
+        }
+
+        .black-sample {
+            background: #000000;
+        }
+
+        .white-sample {
+            background: #FFFFFF;
+            border: 1px solid #333;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .subsection {
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid #ff8c00;
+        }
+
+        .code {
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ff8c00;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 2rem;
+            color: #ff8c00;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.3rem; }
+
+            .section {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        ul ul {
+            margin-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        ul ul ul {
+            margin-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .subsection ul li {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .subsection ul li:before {
+            content: "•";
+            color: #ff8c00;
+            position: absolute;
+            left: 0;
+        }
+
+        .subsection ul ul li:before {
+            content: "◦";
+        }
+
+        .subsection ul ul ul li:before {
+            content: "-";
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Drift to Gift Logo">
+        <h1>Marketing & Brand Document</h1>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Vision & Mission</h2>
+            <div class="subsection">
+                <h3>Vision</h3>
+                <p>To create an exciting and impactful community-driven initiative that merges the thrill of motorsports with the joy of giving back.</p>
+            </div>
+            <div class="subsection">
+                <h3>Mission</h3>
+                <p>To provide exhilarating drift ride-alongs and stunt demos that raise funds and awareness for Variety Children's Charity of BC, supporting children and families in need.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Brand Identity</h2>
+            <div class="subsection">
+                <h3>Color Palette</h3>
+                <div class="color-sample gradient-sample" title="Primary Gradient"></div>
+                <div class="color-sample orange-sample" title="#FF8C00"></div>
+                <div class="color-sample black-sample" title="#000000"></div>
+                <div class="color-sample white-sample" title="#FFFFFF"></div>
+            </div>
+            <div class="subsection">
+                <h3>Typography</h3>
+                <p>Headings: <span class="code">'Racing Sans One', cursive</span></p>
+                <p>Body: <span class="code">'Poppins', sans-serif</span></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Metrics for Success</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Event Attendance</h3>
+                    <div class="metric-number">500+</div>
+                    <p>Participants per event</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Annual Donations</h3>
+                    <div class="metric-number">$50,000</div>
+                    <p>Goal for Variety Children's Charity</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Social Media</h3>
+                    <div class="metric-number">10,000+</div>
+                    <p>Target followers</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Sponsorships</h3>
+                    <div class="metric-number">10+</div>
+                    <p>Corporate sponsors annually</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Target Audience</h2>
+            <div class="subsection">
+                <h3>Primary Audience</h3>
+                <ul>
+                    <li>Motorsports enthusiasts, including drifting and stunt fans</li>
+                    <li>Families and individuals passionate about community and charity</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Secondary Audience</h3>
+                <ul>
+                    <li>Local businesses and corporate sponsors interested in community engagement</li>
+                    <li>Younger audiences and adrenaline seekers drawn to motorsport experiences</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Marketing Strategies</h2>
+            <div class="subsection">
+                <h3>Digital Marketing</h3>
+                <ul>
+                    <li>
+                        <strong>Social Media Strategy (Zero Budget):</strong>
+                        <ul>
+                            <li>
+                                <strong>Facebook:</strong>
+                                <ul>
+                                    <li>Create engaging event pages for each drift session</li>
+                                    <li>Join and participate in local car enthusiast groups</li>
+                                    <li>Share behind-the-scenes content of event preparations</li>
+                                    <li>Use Facebook Live during events to increase reach</li>
+                                    <li>Encourage attendees to tag and share their experiences</li>
+                                    <li>Post user-generated content and testimonials</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Instagram:</strong>
+                                <ul>
+                                    <li>Post daily Stories showing event preparation</li>
+                                    <li>Use relevant hashtags: #DriftBC #MissionRaceway #DriftCommunity</li>
+                                    <li>Share Reels of drift highlights and stunt performances</li>
+                                    <li>Collaborate with local car influencers for cross-promotion</li>
+                                    <li>Host Instagram takeovers with Hard Knox team members</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>TikTok:</strong>
+                                <ul>
+                                    <li>Create trending content with drift footage</li>
+                                    <li>Share quick tips and motorsport facts</li>
+                                    <li>Post behind-the-scenes looks at stunt preparation</li>
+                                    <li>Use popular sounds and music to increase reach</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>YouTube:</strong>
+                                <ul>
+                                    <li>Upload full event highlights</li>
+                                    <li>Create driver spotlight videos</li>
+                                    <li>Share charity impact stories</li>
+                                    <li>Post tutorial content about drift techniques</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Community Building (No Cost):</strong>
+                        <ul>
+                            <li>Create a Facebook group for event participants and fans</li>
+                            <li>Develop a volunteer social media team</li>
+                            <li>Implement user-generated content campaigns</li>
+                            <li>Host online challenges and competitions</li>
+                            <li>Share success stories from charity beneficiaries</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Content Calendar Strategy:</strong>
+                        <ul>
+                            <li>Monday: Weekly event updates</li>
+                            <li>Tuesday: Technical Tuesday (car/drift content)</li>
+                            <li>Wednesday: Community spotlight</li>
+                            <li>Thursday: Throwback posts from past events</li>
+                            <li>Friday: Weekend event promotions</li>
+                            <li>Saturday: Live event coverage</li>
+                            <li>Sunday: Impact stories and charity focus</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Partnerships & Sponsorships</h3>
+                <ul>
+                    <li>Collaborate with local businesses and car clubs</li>
+                    <li>Develop sponsorship packages with clear value propositions</li>
+                    <li>Offer promotional opportunities (logos on cars, banners, social media)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Timeline</h2>
+            <div class="subsection">
+                <h3>Quarter 1</h3>
+                <ul>
+                    <li>Finalize branding and website</li>
+                    <li>Launch social media profiles</li>
+                    <li>Secure initial sponsors</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Quarter 2</h3>
+                <ul>
+                    <li>Host first Drift to Gift event</li>
+                    <li>Focus on organic social media growth</li>
+                    <li>Develop local influencer partnerships</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Quarter 3</h3>
+                <ul>
+                    <li>Expand to additional locations</li>
+                    <li>Launch merchandise line</li>
+                    <li>Strengthen community partnerships</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Quarter 4</h3>
+                <ul>
+                    <li>Evaluate annual performance</li>
+                    <li>Gather stakeholder feedback</li>
+                    <li>Plan next year's strategy</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Budget Overview</h2>
+            <div class="subsection">
+                <h3>Initial Focus: Zero-Budget Marketing Strategies</h3>
+                <ul>
+                    <li>Partnerships and volunteer support</li>
+                    <li>Organic social media growth</li>
+                    <li>Community engagement</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Future Budget Allocation</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Digital Marketing</h3>
+                        <div class="metric-number">$5,000</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Event Promotion</h3>
+                        <div class="metric-number">$8,000</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Website Maintenance</h3>
+                        <div class="metric-number">$3,000</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Merchandise</h3>
+                        <div class="metric-number">$2,000</div>
+                    </div>
+                </div>
+                <p class="total-budget">Total Annual Budget: <strong>$20,000</strong></p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Drift to Gift. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
