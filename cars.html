@@ -194,6 +194,37 @@
             color: #ff8c00;
             font-size: 1.2rem;
         }
+
+        /* Add these styles */
+        .color-picker {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .color-picker label {
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .color-picker input[type="color"] {
+            width: 50px;
+            height: 35px;
+            border: none;
+            border-radius: 5px;
+            background: none;
+            cursor: pointer;
+        }
+
+        .color-picker input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        .color-picker input[type="color"]::-webkit-color-swatch {
+            border: 2px solid #ff8c00;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -229,6 +260,10 @@
                 <button id="rotate-right">Rotate Right</button>
                 <button id="zoom-in">Zoom In</button>
                 <button id="zoom-out">Zoom Out</button>
+                <div class="color-picker">
+                    <label for="car-color">Car Color:</label>
+                    <input type="color" id="car-color" value="#ff0000">
+                </div>
             </div>
         </div>
     </div>
@@ -337,6 +372,8 @@
 
                     // Remove loading indicator
                     document.querySelector('.loading-indicator').style.display = 'none';
+
+                    updateCarColor(document.getElementById('car-color').value);
                 },
                 function (xhr) {
                     const percent = (xhr.loaded / xhr.total * 100).toFixed(1);
@@ -389,6 +426,49 @@
 
         // Initialize when page loads
         window.addEventListener('load', init);
+
+        function updateCarColor(color) {
+            if (model) {
+                model.traverse((node) => {
+                    if (node.isMesh && node.material) {
+                        // Store original color if not already stored
+                        if (!node.material.originalColor) {
+                            node.material.originalColor = node.material.color.clone();
+                        }
+                        
+                        // Create new color from hex value
+                        const newColor = new THREE.Color(color);
+                        
+                        // Update material color
+                        node.material.color = newColor;
+                        node.material.needsUpdate = true;
+                    }
+                });
+            }
+        }
+
+        // Add this to your init function after loading the model
+        document.getElementById('car-color').addEventListener('input', (e) => {
+            updateCarColor(e.target.value);
+        });
+
+        // Add a reset color option
+        function resetCarColor() {
+            if (model) {
+                model.traverse((node) => {
+                    if (node.isMesh && node.material && node.material.originalColor) {
+                        node.material.color = node.material.originalColor.clone();
+                        node.material.needsUpdate = true;
+                    }
+                });
+            }
+        }
+
+        // Add reset button to controls
+        const resetButton = document.createElement('button');
+        resetButton.textContent = 'Reset Color';
+        resetButton.addEventListener('click', resetCarColor);
+        document.querySelector('.model-controls').appendChild(resetButton);
     </script>
 </body>
 </html> 
