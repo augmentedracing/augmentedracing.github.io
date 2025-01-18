@@ -249,7 +249,7 @@
 
             // Camera setup
             camera = new THREE.PerspectiveCamera(45, modelViewer.clientWidth / modelViewer.clientHeight, 0.1, 1000);
-            camera.position.set(5, 2, 5);
+            camera.position.set(2, 1, 2);
 
             // Renderer setup
             renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -278,8 +278,8 @@
                 'assets/models/ac_cars/mazda_rx-7_tuned.glb',
                 function (gltf) {
                     model = gltf.scene;
-                    model.scale.set(0.01, 0.01, 0.01);
-                    model.position.set(0, -0.5, 0);
+                    model.scale.set(0.015, 0.015, 0.015);
+                    model.position.set(0, -0.2, 0);
                     model.rotation.y = Math.PI / 4;
                     scene.add(model);
 
@@ -287,7 +287,11 @@
                     const box = new THREE.Box3().setFromObject(model);
                     const center = box.getCenter(new THREE.Vector3());
                     controls.target.copy(center);
-                    camera.position.set(center.x + 5, center.y + 2, center.z + 5);
+                    camera.position.set(center.x + 2, center.y + 0.5, center.z + 2);
+                    
+                    // Add camera limits to keep focus on car
+                    controls.maxDistance = 4;
+                    controls.minDistance = 1;
                     
                     // Remove loading indicator
                     document.querySelector('.loading-indicator').style.display = 'none';
