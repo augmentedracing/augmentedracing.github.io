@@ -196,6 +196,90 @@
             color: #ff8c00;
             font-size: 1.2rem;
         }
+
+        /* Add these responsive styles */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            #model-viewer {
+                height: 300px;
+            }
+
+            .model-controls {
+                justify-content: center;
+            }
+
+            .model-controls button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Add car description section styles */
+        .car-description-section {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .car-description-container {
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .car-description-container h2 {
+            color: #ff8c00;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .car-description-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .car-description-text {
+            line-height: 1.8;
+        }
+
+        .car-specs-list {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .car-specs-list h3 {
+            color: #ff8c00;
+            margin-bottom: 15px;
+        }
+
+        .car-specs-list ul {
+            list-style: none;
+        }
+
+        .car-specs-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .car-specs-list li:before {
+            content: "→";
+            color: #ff8c00;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .car-description-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -231,6 +315,37 @@
                 <button id="rotate-right">Rotate Right</button>
                 <button id="zoom-in">Zoom In</button>
                 <button id="zoom-out">Zoom Out</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Car Description Section -->
+    <div class="car-description-section">
+        <div class="car-description-container">
+            <h2>Mazda RX-7: The Perfect Drift Machine</h2>
+            <div class="car-description-grid">
+                <div class="car-description-text">
+                    <p>The Mazda RX-7 FD has earned its legendary status in drift culture through a unique combination of engineering excellence and perfect balance. Powered by the iconic 13B-REW twin-rotor engine, the RX-7 delivers smooth, linear power that's ideal for maintaining controlled slides.</p>
+                    <br>
+                    <p>What makes the RX-7 particularly suited to drifting is its near-perfect 50:50 weight distribution, lightweight chassis, and compact engine design. The rotary engine sits behind the front axle, creating a front-mid-engine layout that provides exceptional balance during dynamic maneuvers.</p>
+                    <br>
+                    <p>The car's natural tendency to rotate, combined with its responsive steering and manageable wheelbase, makes it an excellent platform for both beginner and professional drift drivers. The aftermarket support for the RX-7 is extensive, allowing for substantial modifications to enhance its drifting capabilities.</p>
+                </div>
+                <div class="car-specs-list">
+                    <h3>Key Drift Specifications</h3>
+                    <ul>
+                        <li>Lightweight chassis (1,300kg)</li>
+                        <li>Near perfect 50:50 weight distribution</li>
+                        <li>Front-mid engine layout</li>
+                        <li>Excellent power-to-weight ratio</li>
+                        <li>High-revving rotary engine</li>
+                        <li>Limited-slip differential</li>
+                        <li>Double wishbone suspension</li>
+                        <li>Wide aftermarket support</li>
+                        <li>Responsive steering geometry</li>
+                        <li>Ideal wheelbase for drifting</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
