@@ -142,14 +142,14 @@
         /* 3D Viewer Styles */
         .model-viewer-section {
             max-width: 1400px;
-            margin: 40px auto;
+            margin: 8px auto;
             padding: 20px;
         }
 
         .model-container {
             background: rgba(26, 26, 26, 0.95);
             border-radius: 15px;
-            padding: 30px;
+            padding: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
@@ -209,11 +209,29 @@
 
             .model-controls {
                 justify-content: center;
+                padding: 10px 5px;
             }
 
             .model-controls button {
-                padding: 10px 20px;
+                padding: 10px 15px;
                 font-size: 0.9rem;
+            }
+
+            .model-viewer-section {
+                padding: 10px;
+                margin: 8px auto;
+            }
+
+            .model-container {
+                padding: 15px;
+            }
+
+            .car-description-section {
+                padding: 10px;
+            }
+
+            .car-description-container {
+                padding: 20px;
             }
         }
 
@@ -323,12 +341,21 @@
         .drawer ul {
             flex-direction: column;
             gap: 20px;
+            list-style: none;
         }
 
         .drawer a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 1.2rem;
             display: block;
             padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .drawer a:hover {
+            color: #ff4500;
         }
 
         .menu-toggle.open span:nth-child(1) {
