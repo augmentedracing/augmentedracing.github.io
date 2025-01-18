@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift to Gift - Racing for a Cause</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        url('assets/mission-raceway.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        header img {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ff4500, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        /* Container and section styles */
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .event, .donation {
+            background: rgba(26, 26, 26, 0.95);
+            border: none;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 140, 0, 0.2);
+        }
+
+        .event h2, .donation h2 {
+            color: #ff8c00;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Button styles */
+        .event button, .donation form button {
+            background: linear-gradient(90deg, #ff4500, #ff8c00);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+        }
+
+        .event button:hover, .donation form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+            background: linear-gradient(90deg, #ff8c00, #ff4500);
+        }
+
+        /* Form styles */
+        .donation form {
+            display: grid;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .donation form label {
+            color: #ff8c00;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .donation form input {
+            padding: 15px;
+            border: 2px solid rgba(255, 140, 0, 0.3);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .donation form input:focus {
+            border-color: #ff8c00;
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+        }
+
+        /* Video container styles */
+        .video-container {
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .video-container h2 {
+            color: #ff8c00;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer styles */
+        footer {
+            background: rgba(26, 26, 26, 0.95);
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff4500;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 15px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+                padding: 0 10px;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            header img {
+                max-width: 150px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .event, .donation {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .event h2, .donation h2, .video-container h2 {
+                font-size: 1.5rem;
+            }
+            
+            .event button, .donation form button {
+                width: 100%;
+                margin: 10px 0;
+                padding: 15px;
+            }
+            
+            .video-container {
+                margin: 20px auto;
+                padding: 10px;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+                border-radius: 10px;
+            }
+            
+            .donation form {
+                gap: 15px;
+            }
+            
+            .donation form input {
+                padding: 12px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .event, .donation {
+                padding: 15px;
+            }
+            
+            .event p, .donation p {
+                font-size: 0.95rem;
+            }
+            
+            footer p {
+                font-size: 0.9rem;
+                padding: 0 15px;
+            }
+        }
+
+        /* Landscape mode fixes */
+        @media (max-height: 600px) and (orientation: landscape) {
+            header {
+                padding: 30px 15px;
+            }
+            
+            header img {
+                max-width: 100px;
+                margin: 0 auto 10px;
+            }
+            
+            .video-container iframe {
+                height: 200px;
+            }
+        }
+
+        /* Tablet optimization */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .event, .donation {
+                padding: 25px;
+            }
+        }
+
+        /* Fix for button touch targets on mobile */
+        @media (hover: none) {
+            .event button, .donation form button {
+                padding: 15px 25px;
+                min-height: 44px; /* Minimum touch target size */
+            }
+            
+            input, select, textarea {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Drift to Gift Logo">
+        <h1>Drift to Gift - Racing for a Cause</h1>
+        <p>Join the ride, support the cause!</p>
+    </header>
+
+    <div class="video-container">
+        <h2>Featured Video: Drift Ride-Alongs</h2>
+        <iframe src="https://www.youtube.com/embed/tQfaXhSFXSg" allowfullscreen></iframe>
+    </div>
+
+    <div class="container">
+        <!-- Event 1: Doorwarz 13 -->
+        <div class="event">
+            <h2>Doorwarz 13</h2>
+            <p><strong>Dates:</strong> June 26–29, 2025</p>
+            <p><strong>Location:</strong> Mission Raceway Park</p>
+            <p>Experience the thrill of drift ride-alongs and jaw-dropping stunt demos at Doorwarz 13. Proceeds benefit <strong>Variety Children's Charity of BC</strong>, supporting children and families in need. Don’t miss the excitement!</p>
+            <button onclick="window.location.href='#register'">Register for Ride-Along</button>
+            <button onclick="window.location.href='#donate'">Donate to the Cause</button>
+        </div>
+
+        <!-- Event 2: Smoke, Fire, and Thunder -->
+        <div class="event">
+            <h2>Smoke, Fire, and Thunder</h2>
+            <p><strong>Dates:</strong> August 21–24, 2025</p>
+            <p><strong>Location:</strong> Mission Raceway Park</p>
+            <p>Presented by <strong>Lordco Auto Parts</strong>, enjoy drift ride-alongs, epic stunts, and thrilling drag races. Support a great cause while indulging your passion for motorsports!</p>
+            <button onclick="window.location.href='#register'">Sign Up for Ride-Along</button>
+            <button onclick="window.location.href='#donate'">Donate Now</button>
+        </div>
+
+        <!-- Donation Section -->
+        <div class="donation">
+            <h2>Make a Donation</h2>
+            <form action="#" method="POST">
+                <label for="donation-amount">Donation Amount ($):</label>
+                <input type="number" id="donation-amount" name="donation-amount" placeholder="Enter amount" required>
+
+                <label for="donor-name">Your Name:</label>
+                <input type="text" id="donor-name" name="donor-name" placeholder="Enter your name" required>
+
+                <label for="donor-email">Your Email:</label>
+                <input type="email" id="donor-email" name="donor-email" placeholder="Enter your email" required>
+
+                <button type="submit">Donate Now</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Drift to Gift. Hosted by Mission Raceway Park and Hard Knox Stunts Demo Team.</p>
+    </footer>
+</body>
+</html>
