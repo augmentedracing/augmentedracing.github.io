@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift to Gift - Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        url('assets/mission-raceway.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .event-card {
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h1, h2 {
+            font-family: 'Racing Sans One', cursive;
+            color: #ff8c00;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #ff4500;
+            padding-bottom: 10px;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .detail-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .detail-box h3 {
+            color: #ff8c00;
+            margin-bottom: 10px;
+        }
+
+        .register-button {
+            background: linear-gradient(90deg, #ff4500, #ff8c00);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .register-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+            background: linear-gradient(90deg, #ff8c00, #ff4500);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .container { padding: 20px; }
+            .event-card { padding: 20px; }
+        }
+
+        .past-events {
+            background: rgba(26, 26, 26, 0.7);
+            border-top: 2px solid #ff4500;
+        }
+
+        .past-events .detail-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .past-events .detail-box li {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Drift to Gift Logo" style="max-width: 150px; margin-bottom: 20px;">
+        <h1>Upcoming Events</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="donate.html">Donate</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="event-card">
+            <h2>Doorwarz 13</h2>
+            <div class="event-details">
+                <div class="detail-box">
+                    <h3>Date & Time</h3>
+                    <p>June 26–29, 2025</p>
+                    <p>Gates open at 9:00 AM</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Location</h3>
+                    <p>Mission Raceway Park</p>
+                    <p>32670 Dyke Road, Mission, BC</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Event Features</h3>
+                    <ul>
+                        <li>Drift ride-alongs</li>
+                        <li>Stunt demonstrations</li>
+                        <li>Charity fundraising</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Experience the thrill of drift ride-alongs and jaw-dropping stunt demos. All proceeds benefit Variety Children's Charity of BC, supporting children and families in need.</p>
+            <a href="donate.html" class="register-button">Register Now</a>
+        </div>
+
+        <div class="event-card">
+            <h2>Smoke, Fire, and Thunder</h2>
+            <div class="event-details">
+                <div class="detail-box">
+                    <h3>Date & Time</h3>
+                    <p>August 21–24, 2025</p>
+                    <p>Gates open at 9:00 AM</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Location</h3>
+                    <p>Mission Raceway Park</p>
+                    <p>32670 Dyke Road, Mission, BC</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Event Features</h3>
+                    <ul>
+                        <li>Drift ride-alongs</li>
+                        <li>Epic stunts</li>
+                        <li>Drag races</li>
+                        <li>Presented by Lordco Auto Parts</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Presented by Lordco Auto Parts, featuring drift ride-alongs, epic stunts, and thrilling drag races. Support a great cause while indulging your passion for motorsports!</p>
+            <a href="donate.html" class="register-button">Register Now</a>
+        </div>
+
+        <div class="event-card past-events">
+            <h2>Past Events</h2>
+            <div class="event-details">
+                <div class="detail-box">
+                    <h3>2023 Events</h3>
+                    <ul>
+                        <li>Drift To Gift Sessions: June 28-29, 2023</li>
+                        <li>Drift To Gift Sessions: August 23-24, 2023</li>
+                        <li>Smoke Fire Thunder: August 23-24, 2023</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Drift to Gift. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
