@@ -161,6 +161,27 @@
             margin-bottom: 10px;
             color: #ccc;
         }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .event-details {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .detail-box {
+                padding: 12px;
+            }
+
+            .register-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .past-events .detail-box ul {
+                padding: 0 10px;
+            }
+        }
     </style>
 </head>
 <body>

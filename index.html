@@ -140,21 +140,82 @@
             margin: 40px auto;
             text-align: center;
             padding: 20px;
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
         }
 
         .video-container h2 {
             color: #ff8c00;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-size: 2rem;
+            font-family: 'Racing Sans One', cursive;
+            position: relative;
+            display: inline-block;
+        }
+
+        .video-container h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff4500, #ff8c00);
+            border-radius: 2px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.2);
+            background: #000;
+            margin: 0 auto;
+            max-width: 900px;
         }
 
         .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 800px;
-            height: 450px;
-            border-radius: 15px;
+            height: 100%;
             border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+        }
+
+        /* Video container responsive styles */
+        @media (max-width: 768px) {
+            .video-container {
+                margin: 20px 15px;
+                padding: 15px;
+            }
+
+            .video-container h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .video-wrapper {
+                margin: 0 -5px;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container {
+                margin: 15px 10px;
+                padding: 10px;
+            }
+
+            .video-container h2 {
+                font-size: 1.3rem;
+            }
         }
 
         /* Footer styles */
@@ -196,79 +257,65 @@
 
         /* Responsive styles */
         @media (max-width: 768px) {
-            header {
-                padding: 60px 15px;
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                padding: 10px;
             }
-            
+
+            nav {
+                position: relative; /* Change from sticky on mobile */
+            }
+
             header h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 padding: 0 10px;
-            }
-            
-            header p {
-                font-size: 1rem;
-            }
-            
-            header img {
-                max-width: 150px;
-            }
-            
-            .container {
-                padding: 15px;
-            }
-            
-            .event, .donation {
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-            
-            .event h2, .donation h2, .video-container h2 {
-                font-size: 1.5rem;
             }
             
             .event button, .donation form button {
                 width: 100%;
                 margin: 10px 0;
-                padding: 15px;
             }
-            
-            .video-container {
-                margin: 20px auto;
+
+            .donation form {
                 padding: 10px;
             }
-            
-            .video-container iframe {
-                height: 250px;
-                border-radius: 10px;
-            }
-            
-            .donation form {
-                gap: 15px;
-            }
-            
-            .donation form input {
-                padding: 12px;
-                font-size: 16px; /* Prevents zoom on iOS */
+
+            /* Improve form readability on mobile */
+            input, select, textarea {
+                font-size: 16px !important; /* Prevent zoom on iOS */
+                width: 100%;
+                -webkit-appearance: none; /* Remove default iOS styling */
+                border-radius: 8px;
             }
         }
 
         /* Small mobile devices */
         @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.75rem;
+            .container {
+                padding: 10px;
             }
-            
+
+            header {
+                padding: 40px 15px;
+            }
+
+            header img {
+                max-width: 120px;
+            }
+
+            .video-container iframe {
+                height: 200px;
+            }
+
             .event, .donation {
                 padding: 15px;
+                margin-bottom: 15px;
             }
-            
-            .event p, .donation p {
-                font-size: 0.95rem;
-            }
-            
-            footer p {
-                font-size: 0.9rem;
-                padding: 0 15px;
+
+            h2 {
+                font-size: 1.5rem !important;
             }
         }
 
@@ -361,8 +408,13 @@
     </nav>
 
     <div class="video-container">
-        <h2>Featured Video: Drift Ride-Alongs</h2>
-        <iframe src="https://www.youtube.com/embed/tQfaXhSFXSg" allowfullscreen></iframe>
+        <h2>Ride Along with Cassandra</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/tQfaXhSFXSg" 
+                    title="Ride Along with Cassandra"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+        </div>
     </div>
 
     <div class="container">
