@@ -389,9 +389,109 @@
         nav a:hover {
             color: #ff4500;
         }
+
+        /* Hamburger Menu Styles */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background: #ff8c00;
+            transition: all 0.3s ease;
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 999;
+            transition: left 0.3s ease;
+            padding: 80px 20px 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .drawer.open {
+            left: 0;
+        }
+
+        .drawer ul {
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .drawer a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: block;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .drawer a:hover {
+            color: #ff4500;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Hamburger Menu Button -->
+    <button class="menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Drawer Navigation -->
+    <div class="drawer">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="cars.html">Our Cars</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="donate.html">Donate</a></li>
+        </ul>
+    </div>
+
     <header>
         <img src="assets/logo.png" alt="Drift to Gift Logo">
         <h1>Drift to Gift - Racing for a Cause</h1>
@@ -402,6 +502,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="cars.html">Our Cars</a></li>
             <li><a href="marketing.html">Marketing</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="donate.html">Donate</a></li>
@@ -460,5 +561,24 @@
     <footer>
         <p>&copy; 2025 Drift to Gift. Hosted by Mission Raceway Park and Hard Knox Stunts Demo Team.</p>
     </footer>
+
+    <script>
+        // Menu Drawer functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const drawer = document.querySelector('.drawer');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            drawer.classList.toggle('open');
+        });
+
+        // Close drawer when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!drawer.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('open');
+                drawer.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>
