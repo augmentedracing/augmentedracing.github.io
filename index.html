@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <style>
         /* Reset and base styles */
         * {
@@ -667,12 +668,15 @@
         }
     </script>
 
-    <!-- Add Three.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- Update Three.js library loading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" crossorigin="anonymous"></script>
 
-    <script>
-        // Three.js setup
+    <script type="module">
+        // Move Three.js setup into a module
+        import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+        import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
+
         let scene, camera, renderer, model;
         
         function init() {
@@ -792,8 +796,12 @@
 
         window.addEventListener('resize', onWindowResize);
 
-        // Initialize everything when the page loads
-        window.addEventListener('DOMContentLoaded', function() {
+        // Make functions available globally
+        window.init = init;
+        window.setupControls = setupControls;
+        
+        // Initialize when document is ready
+        document.addEventListener('DOMContentLoaded', () => {
             init();
             setupControls();
         });
