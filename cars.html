@@ -196,151 +196,6 @@
             color: #ff8c00;
             font-size: 1.2rem;
         }
-
-        /* Add these styles */
-        .color-picker {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-left: 20px;
-        }
-
-        .color-picker label {
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .color-picker input[type="color"] {
-            width: 50px;
-            height: 35px;
-            border: none;
-            border-radius: 5px;
-            background: none;
-            cursor: pointer;
-        }
-
-        .color-picker input[type="color"]::-webkit-color-swatch-wrapper {
-            padding: 0;
-        }
-
-        .color-picker input[type="color"]::-webkit-color-swatch {
-            border: 2px solid #ff8c00;
-            border-radius: 4px;
-        }
-
-        /* Add these styles */
-        .preset-colors {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-left: 20px;
-            flex-wrap: wrap;
-        }
-
-        .preset-colors span {
-            color: #fff;
-            font-size: 0.9rem;
-        }
-
-        .color-preset {
-            width: 30px;
-            height: 30px;
-            border: 2px solid #ff8c00;
-            border-radius: 50%;
-            cursor: pointer;
-            color: #fff;
-            font-weight: bold;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            padding: 0;
-            background-image: none;
-        }
-
-        .color-preset:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 10px rgba(255, 140, 0, 0.4);
-        }
-
-        .color-preset.active {
-            border-color: #fff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-        }
-
-        /* Add these background styles */
-        .racing-bg-1 {
-            background: linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%, #000000), 
-                        linear-gradient(45deg, #000000 25%, #1a1a1a 25%, #1a1a1a 75%, #000000 75%, #000000);
-            background-size: 60px 60px;
-            background-position: 0 0, 30px 30px;
-            position: relative;
-        }
-
-        .racing-bg-2 {
-            background: 
-                linear-gradient(135deg, #1a1a1a 25%, transparent 25%) -50px 0,
-                linear-gradient(225deg, #1a1a1a 25%, transparent 25%) -50px 0,
-                linear-gradient(315deg, #1a1a1a 25%, transparent 25%),
-                linear-gradient(45deg, #1a1a1a 25%, transparent 25%);
-            background-size: 100px 100px;
-            background-color: #000000;
-            position: relative;
-        }
-
-        .racing-bg-3 {
-            background: 
-                linear-gradient(90deg, transparent 50%, rgba(255,69,0,0.1) 50%),
-                linear-gradient(90deg, rgba(255,140,0,0.1) 50%, transparent 50%),
-                linear-gradient(0deg, transparent 50%, rgba(255,69,0,0.1) 50%),
-                linear-gradient(0deg, rgba(255,140,0,0.1) 50%, transparent 50%);
-            background-color: #1a1a1a;
-            background-size: 50px 50px;
-            position: relative;
-        }
-
-        /* Add overlay for better contrast */
-        .racing-bg-1::after,
-        .racing-bg-2::after,
-        .racing-bg-3::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
-            pointer-events: none;
-        }
-
-        /* Add background switcher */
-        .bg-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .bg-button {
-            padding: 8px 15px;
-            background: linear-gradient(90deg, #ff4500, #ff8c00);
-            border: none;
-            border-radius: 20px;
-            color: white;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: transform 0.3s ease;
-        }
-
-        .bg-button:hover {
-            transform: translateY(-2px);
-        }
-
-        .bg-button.active {
-            box-shadow: 0 0 15px rgba(255, 140, 0, 0.4);
-        }
     </style>
 </head>
 <body>
@@ -357,13 +212,6 @@
     <div class="page-header">
         <h1>Our Drift Cars</h1>
         <p>Experience the power and precision of our professional drift machines</p>
-    </div>
-
-    <div class="bg-switcher">
-        <button class="bg-button active" data-bg="default">Default</button>
-        <button class="bg-button" data-bg="racing-1">Racing 1</button>
-        <button class="bg-button" data-bg="racing-2">Racing 2</button>
-        <button class="bg-button" data-bg="racing-3">Racing 3</button>
     </div>
 
     <div class="car-display">
@@ -383,23 +231,6 @@
                 <button id="rotate-right">Rotate Right</button>
                 <button id="zoom-in">Zoom In</button>
                 <button id="zoom-out">Zoom Out</button>
-                <div class="color-picker">
-                    <label for="car-color">Car Color:</label>
-                    <input type="color" id="car-color" value="#ff0000">
-                </div>
-                <div class="preset-colors">
-                    <span>Presets:</span>
-                    <button class="color-preset" data-color="#FF0000" style="background-color: #FF0000;" title="Racing Red">R</button>
-                    <button class="color-preset" data-color="#000000" style="background-color: #000000;" title="Midnight Black">B</button>
-                    <button class="color-preset" data-color="#FFFFFF" style="background-color: #FFFFFF; color: #000;" title="Pure White">W</button>
-                    <button class="color-preset" data-color="#2E5894" style="background-color: #2E5894;" title="Bayside Blue">BB</button>
-                    <button class="color-preset" data-color="#FFD700" style="background-color: #FFD700; color: #000;" title="Competition Gold">G</button>
-                    <button class="color-preset" data-color="#8A2BE2" style="background-color: #8A2BE2;" title="Midnight Purple">MP</button>
-                    <button class="color-preset" data-color="#00FF00" style="background-color: #00FF00; color: #000;" title="Kawasaki Green">KG</button>
-                    <button class="color-preset" data-color="#FF4500" style="background-color: #FF4500;" title="Drift Orange">DO</button>
-                    <button class="color-preset" data-color="#C0C0C0" style="background-color: #C0C0C0; color: #000;" title="Silver">S</button>
-                    <button class="color-preset" data-color="#4B0082" style="background-color: #4B0082;" title="Deep Purple">DP</button>
-                </div>
             </div>
         </div>
     </div>
@@ -508,8 +339,6 @@
 
                     // Remove loading indicator
                     document.querySelector('.loading-indicator').style.display = 'none';
-
-                    updateCarColor(document.getElementById('car-color').value);
                 },
                 function (xhr) {
                     const percent = (xhr.loaded / xhr.total * 100).toFixed(1);
@@ -562,111 +391,6 @@
 
         // Initialize when page loads
         window.addEventListener('load', init);
-
-        function updateCarColor(color) {
-            if (model) {
-                model.traverse((node) => {
-                    if (node.isMesh && node.material) {
-                        // Store original color if not already stored
-                        if (!node.material.originalColor) {
-                            node.material.originalColor = node.material.color.clone();
-                        }
-                        
-                        // Create new color from hex value
-                        const newColor = new THREE.Color(color);
-                        
-                        // Update material color
-                        node.material.color = newColor;
-                        node.material.needsUpdate = true;
-                    }
-                });
-            }
-        }
-
-        // Add this to your init function after loading the model
-        document.getElementById('car-color').addEventListener('input', (e) => {
-            updateCarColor(e.target.value);
-        });
-
-        // Add a reset color option
-        function resetCarColor() {
-            if (model) {
-                model.traverse((node) => {
-                    if (node.isMesh && node.material && node.material.originalColor) {
-                        node.material.color = node.material.originalColor.clone();
-                        node.material.needsUpdate = true;
-                    }
-                });
-            }
-        }
-
-        // Add reset button to controls
-        const resetButton = document.createElement('button');
-        resetButton.textContent = 'Reset Color';
-        resetButton.addEventListener('click', resetCarColor);
-        document.querySelector('.model-controls').appendChild(resetButton);
-
-        document.querySelectorAll('.color-preset').forEach(button => {
-            button.addEventListener('click', (e) => {
-                // Remove active class from all presets
-                document.querySelectorAll('.color-preset').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                // Add active class to clicked button
-                e.target.classList.add('active');
-                
-                // Update color picker value
-                const colorPicker = document.getElementById('car-color');
-                colorPicker.value = e.target.dataset.color;
-                
-                // Update car color
-                updateCarColor(e.target.dataset.color);
-            });
-        });
-
-        // Update color picker when preset is clicked
-        document.getElementById('car-color').addEventListener('input', (e) => {
-            // Remove active class from all presets
-            document.querySelectorAll('.color-preset').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            updateCarColor(e.target.value);
-        });
-
-        function switchBackground(bgClass) {
-            const modelViewer = document.getElementById('model-viewer');
-            
-            // Remove all background classes
-            modelViewer.classList.remove('racing-bg-1', 'racing-bg-2', 'racing-bg-3');
-            
-            // Add new background class if not default
-            if (bgClass !== 'default') {
-                modelViewer.classList.add(bgClass);
-            }
-            
-            // Update buttons
-            document.querySelectorAll('.bg-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
-
-        // Add click handlers for background switcher
-        document.querySelectorAll('.bg-button').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const bgClass = event.target.dataset.bg;
-                if (bgClass === 'default') {
-                    switchBackground('default');
-                } else if (bgClass === 'racing-1') {
-                    switchBackground('racing-bg-1');
-                } else if (bgClass === 'racing-2') {
-                    switchBackground('racing-bg-2');
-                } else if (bgClass === 'racing-3') {
-                    switchBackground('racing-bg-3');
-                }
-            });
-        });
     </script>
 </body>
 </html> 
