@@ -314,6 +314,33 @@
                 font-size: 16px; /* Prevents zoom on iOS */
             }
         }
+
+        /* Navigation styles */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+        }
     </style>
 </head>
 <body>
@@ -322,6 +349,16 @@
         <h1>Drift to Gift - Racing for a Cause</h1>
         <p>Join the ride, support the cause!</p>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="donate.html">Donate</a></li>
+        </ul>
+    </nav>
 
     <div class="video-container">
         <h2>Featured Video: Drift Ride-Alongs</h2>
@@ -335,8 +372,8 @@
             <p><strong>Dates:</strong> June 26–29, 2025</p>
             <p><strong>Location:</strong> Mission Raceway Park</p>
             <p>Experience the thrill of drift ride-alongs and jaw-dropping stunt demos at Doorwarz 13. Proceeds benefit <strong>Variety Children's Charity of BC</strong>, supporting children and families in need. Don’t miss the excitement!</p>
-            <button onclick="window.location.href='#register'">Register for Ride-Along</button>
-            <button onclick="window.location.href='#donate'">Donate to the Cause</button>
+            <button onclick="window.location.href='events.html'">Register for Ride-Along</button>
+            <button onclick="window.location.href='donate.html'">Donate to the Cause</button>
         </div>
 
         <!-- Event 2: Smoke, Fire, and Thunder -->
@@ -345,8 +382,8 @@
             <p><strong>Dates:</strong> August 21–24, 2025</p>
             <p><strong>Location:</strong> Mission Raceway Park</p>
             <p>Presented by <strong>Lordco Auto Parts</strong>, enjoy drift ride-alongs, epic stunts, and thrilling drag races. Support a great cause while indulging your passion for motorsports!</p>
-            <button onclick="window.location.href='#register'">Sign Up for Ride-Along</button>
-            <button onclick="window.location.href='#donate'">Donate Now</button>
+            <button onclick="window.location.href='events.html'">Sign Up for Ride-Along</button>
+            <button onclick="window.location.href='donate.html'">Donate Now</button>
         </div>
 
         <!-- Donation Section -->
