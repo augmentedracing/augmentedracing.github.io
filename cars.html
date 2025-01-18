@@ -164,9 +164,11 @@
 
         .model-controls {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 15px;
             margin-top: 20px;
+            padding: 10px;
         }
 
         .model-controls button {
@@ -225,6 +227,47 @@
             border: 2px solid #ff8c00;
             border-radius: 4px;
         }
+
+        /* Add these styles */
+        .preset-colors {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 20px;
+            flex-wrap: wrap;
+        }
+
+        .preset-colors span {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .color-preset {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #ff8c00;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            padding: 0;
+            background-image: none;
+        }
+
+        .color-preset:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.4);
+        }
+
+        .color-preset.active {
+            border-color: #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -263,6 +306,19 @@
                 <div class="color-picker">
                     <label for="car-color">Car Color:</label>
                     <input type="color" id="car-color" value="#ff0000">
+                </div>
+                <div class="preset-colors">
+                    <span>Presets:</span>
+                    <button class="color-preset" data-color="#FF0000" style="background-color: #FF0000;" title="Racing Red">R</button>
+                    <button class="color-preset" data-color="#000000" style="background-color: #000000;" title="Midnight Black">B</button>
+                    <button class="color-preset" data-color="#FFFFFF" style="background-color: #FFFFFF; color: #000;" title="Pure White">W</button>
+                    <button class="color-preset" data-color="#2E5894" style="background-color: #2E5894;" title="Bayside Blue">BB</button>
+                    <button class="color-preset" data-color="#FFD700" style="background-color: #FFD700; color: #000;" title="Competition Gold">G</button>
+                    <button class="color-preset" data-color="#8A2BE2" style="background-color: #8A2BE2;" title="Midnight Purple">MP</button>
+                    <button class="color-preset" data-color="#00FF00" style="background-color: #00FF00; color: #000;" title="Kawasaki Green">KG</button>
+                    <button class="color-preset" data-color="#FF4500" style="background-color: #FF4500;" title="Drift Orange">DO</button>
+                    <button class="color-preset" data-color="#C0C0C0" style="background-color: #C0C0C0; color: #000;" title="Silver">S</button>
+                    <button class="color-preset" data-color="#4B0082" style="background-color: #4B0082;" title="Deep Purple">DP</button>
                 </div>
             </div>
         </div>
@@ -469,6 +525,34 @@
         resetButton.textContent = 'Reset Color';
         resetButton.addEventListener('click', resetCarColor);
         document.querySelector('.model-controls').appendChild(resetButton);
+
+        document.querySelectorAll('.color-preset').forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Remove active class from all presets
+                document.querySelectorAll('.color-preset').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                e.target.classList.add('active');
+                
+                // Update color picker value
+                const colorPicker = document.getElementById('car-color');
+                colorPicker.value = e.target.dataset.color;
+                
+                // Update car color
+                updateCarColor(e.target.dataset.color);
+            });
+        });
+
+        // Update color picker when preset is clicked
+        document.getElementById('car-color').addEventListener('input', (e) => {
+            // Remove active class from all presets
+            document.querySelectorAll('.color-preset').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            updateCarColor(e.target.value);
+        });
     </script>
 </body>
 </html> 
