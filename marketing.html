@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/menu.css">
     <style>
         /* Base styles from index.html */
         * {
@@ -270,40 +271,40 @@
     </style>
 </head>
 <body>
+    <div id="menu-container">
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Drawer Navigation -->
+        <div class="drawer">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cars.html">Our Cars</a></li>
+                <li><a href="marketing.html">Marketing</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cars.html">Our Cars</a></li>
+                <li><a href="marketing.html">Marketing</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <header>
         <img src="assets/logo.png" alt="Drift to Gift Logo" style="max-width: 150px; margin-bottom: 20px;">
         <h1>Marketing & Brand Identity</h1>
     </header>
-
-    <!-- Hamburger Menu Button -->
-    <button class="menu-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Drawer Navigation -->
-    <div class="drawer">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="cars.html">Our Cars</a></li>
-            <li><a href="marketing.html">Marketing</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="donate.html">Donate</a></li>
-        </ul>
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="cars.html">Our Cars</a></li>
-            <li><a href="marketing.html">Marketing</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="donate.html">Donate</a></li>
-        </ul>
-    </nav>
 
     <div class="container">
         <section id="vision" class="section">
@@ -391,23 +392,6 @@
         <p>&copy; 2025 Drift to Gift. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Menu Drawer functionality
-        const menuToggle = document.querySelector('.menu-toggle');
-        const drawer = document.querySelector('.drawer');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('open');
-            drawer.classList.toggle('open');
-        });
-
-        // Close drawer when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!drawer.contains(e.target) && !menuToggle.contains(e.target)) {
-                menuToggle.classList.remove('open');
-                drawer.classList.remove('open');
-            }
-        });
-    </script>
+    <script src="scripts/menu.js"></script>
 </body>
 </html> 
