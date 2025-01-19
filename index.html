@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <link rel="stylesheet" href="styles/menu.css">
     <style>
         /* Reset and base styles */
         * {
@@ -372,134 +373,37 @@
                 font-size: 16px; /* Prevents zoom on iOS */
             }
         }
-
-        /* Navigation styles */
-        nav {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            color: #ff8c00;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff4500;
-        }
-
-        /* Hamburger Menu Styles */
-        .menu-toggle {
-            display: none;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px 0;
-            background: #ff8c00;
-            transition: all 0.3s ease;
-        }
-
-        .drawer {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            width: 300px;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 999;
-            transition: left 0.3s ease;
-            padding: 80px 20px 20px;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .drawer.open {
-            left: 0;
-        }
-
-        .drawer ul {
-            flex-direction: column;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .drawer a {
-            color: #ff8c00;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            display: block;
-            padding: 10px;
-            transition: color 0.3s;
-        }
-
-        .drawer a:hover {
-            color: #ff4500;
-        }
-
-        .menu-toggle.open span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-
-        .menu-toggle.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.open span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            nav {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Hamburger Menu Button -->
-    <button class="menu-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <div id="menu-container">
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <!-- Drawer Navigation -->
-    <div class="drawer">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="cars.html">Our Cars</a></li>
-            <li><a href="marketing.html">Marketing</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="donate.html">Donate</a></li>
-        </ul>
+        <!-- Drawer Navigation -->
+        <div class="drawer">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cars.html">Our Cars</a></li>
+                <li><a href="marketing.html">Marketing</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cars.html">Our Cars</a></li>
+                <li><a href="marketing.html">Marketing</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
     </div>
 
     <header>
@@ -507,17 +411,6 @@
         <h1>Drift to Gift - Racing for a Cause</h1>
         <p>Join the ride, support the cause!</p>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="cars.html">Our Cars</a></li>
-            <li><a href="marketing.html">Marketing</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="donate.html">Donate</a></li>
-        </ul>
-    </nav>
 
     <div class="video-container">
         <h2>Ride Along with Cassandra</h2>
@@ -534,7 +427,6 @@
             <p><strong>Location:</strong> Mission Raceway Park</p>
             <p>Experience the thrill of drift ride-alongs and jaw-dropping stunt demos at Doorwarz 13. Proceeds benefit <strong>Variety Children's Charity of BC</strong>, supporting children and families in need. Don't miss the excitement!</p>
             <button onclick="window.location.href='events.html'">Register for Ride-Along</button>
-            <button onclick="window.location.href='donate.html'">Donate to the Cause</button>
         </div>
 
         <!-- Event 2: Smoke, Fire, and Thunder -->
@@ -544,48 +436,12 @@
             <p><strong>Location:</strong> Mission Raceway Park</p>
             <p>Presented by <strong>Lordco Auto Parts</strong>, enjoy drift ride-alongs, epic stunts, and thrilling drag races. Support a great cause while indulging your passion for motorsports!</p>
             <button onclick="window.location.href='events.html'">Sign Up for Ride-Along</button>
-            <button onclick="window.location.href='donate.html'">Donate Now</button>
-        </div>
-
-        <!-- Donation Section -->
-        <div class="donation">
-            <h2>Make a Donation</h2>
-            <form action="#" method="POST">
-                <label for="donation-amount">Donation Amount ($):</label>
-                <input type="number" id="donation-amount" name="donation-amount" placeholder="Enter amount" required>
-
-                <label for="donor-name">Your Name:</label>
-                <input type="text" id="donor-name" name="donor-name" placeholder="Enter your name" required>
-
-                <label for="donor-email">Your Email:</label>
-                <input type="email" id="donor-email" name="donor-email" placeholder="Enter your email" required>
-
-                <button type="submit">Donate Now</button>
-            </form>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Drift to Gift. Hosted by Mission Raceway Park and Hard Knox Stunts Demo Team.</p>
     </footer>
-
-    <script>
-        // Menu Drawer functionality
-        const menuToggle = document.querySelector('.menu-toggle');
-        const drawer = document.querySelector('.drawer');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('open');
-            drawer.classList.toggle('open');
-        });
-
-        // Close drawer when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!drawer.contains(e.target) && !menuToggle.contains(e.target)) {
-                menuToggle.classList.remove('open');
-                drawer.classList.remove('open');
-            }
-        });
-    </script>
+    <script src="scripts/menu.js"></script>
 </body>
 </html>
